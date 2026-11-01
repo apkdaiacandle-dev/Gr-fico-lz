@@ -23,11 +23,8 @@ jobs:
       with:
         packages: 'platforms;android-34 build-tools;34.0.0'
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
+    - name: Build Debug APK with System Gradle
+      run: gradle assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
